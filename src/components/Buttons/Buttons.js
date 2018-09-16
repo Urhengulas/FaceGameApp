@@ -1,18 +1,13 @@
 import React, { Component } from "react";
 import { View, Button } from "react-native";
 
-import { styles } from "../style.js";
-import { randomNumber } from "../data/functions.js";
+import { ButtonsStyle } from "./Buttons.style";
+import { randomNumber } from "../../data/functions.js";
+import { NameButton } from "../NameButton/NameButton,js";
 
-export var rightNumber = randomNumber(4);
+//export var rightNumber = randomNumber(4);
 
-export const NameButton = ({ onClick, name }) => (
-  <View style={styles.boxes}>
-    <Button onPress={onClick} title={name} color="#000000" />
-  </View>
-);
-
-export class Buttons extends Component {
+class Buttons extends Component {
   renderNameButton(i) {
     return (
       <NameButton
@@ -24,13 +19,13 @@ export class Buttons extends Component {
 
   render() {
     return (
-      <View style={styles.lower}>
-        <View style={styles.left}>
+      <View style={ButtonsStyle.ButtonField}>
+        <View style={ButtonsStyle.left}>
           {this.renderNameButton(0)}
           {this.renderNameButton(1)}
         </View>
 
-        <View style={styles.right}>
+        <View style={ButtonsStyle.right}>
           {this.renderNameButton(2)}
           {this.renderNameButton(3)}
         </View>
@@ -38,3 +33,5 @@ export class Buttons extends Component {
     );
   }
 }
+
+export default { Buttons };

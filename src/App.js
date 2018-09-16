@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { View } from "react-native";
 
-import { Buttons } from "./components/Button.js";
-import { Picture } from "./app/Picture.js";
+import { Buttons } from "./components/Buttons./Buttons.js";
+import { Picture } from "./components/Picture/Picture.js";
 
-import { styles } from "./style.js";
+import { AppStyle } from "./App.style";
 import { randomNumber, selectedPersons } from "./data/functions.js";
 
 //const Button = ({ text }) => <button>{text}</button>;
@@ -14,13 +14,15 @@ import { randomNumber, selectedPersons } from "./data/functions.js";
 export default class FaceNameGame extends Component {
   constructor(props) {
     super(props);
-    const foo = this.getRandomNumberAndSelectedPersons();
+    const dataset = this.getNewDataset();
 
-    this.state = { ...foo, anotherState: true };
-    this.state.rightNumber;
+    this.state = {
+      names: dataset["names"],
+      rightNumber: dataset["rightNumber"]
+    };
   }
 
-  getRandomNumberAndSelectedPersons = () => ({
+  getNewDataset = () => ({
     rightNumber: randomNumber(4),
     names: selectedPersons()
   });
@@ -29,8 +31,8 @@ export default class FaceNameGame extends Component {
     if (title == names[rightNumber]["name"]) {
       alert("right");
 
-      const foo = this.getRandomNumberAndSelectedPersons();
-      this.setState(foo);
+      const dataset = this.getNewDataset();
+      this.setState(dataset);
     } else {
       alert("wrong");
     }
@@ -40,7 +42,7 @@ export default class FaceNameGame extends Component {
     const { names, rightNumber } = this.state;
 
     return (
-      <View style={styles.wrapper}>
+      <View style={AppStyle.wrapper}>
         <Picture path={names[rightNumber]["image"]} />
         <Buttons values={names} onClick={title => this.testfunction(title)} />
       </View>
