@@ -13,3 +13,5 @@ const PictureStyle = StyleSheet.create({
     width: 200
   }
 });
+
+export { PictureStyle };

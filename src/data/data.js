@@ -1,19 +1,19 @@
 const persons = [
   {
     name: "Donald",
-    image: require("./images/donald.png")
+    image: require("../images/donald.png")
   },
   {
     name: "Goofy",
-    image: require("./images/goofy.png")
+    image: require("../images/goofy.png")
   },
   {
     name: "Mickey",
-    image: require("./images/mickey.png")
+    image: require("../images/mickey.png")
   },
   {
     name: "Dagobert",
-    image: require("./images/dagobert.png")
+    image: require("../images/dagobert.png")
   }
   // {
   //   'name': 'Nemo',
@@ -25,6 +25,8 @@ const persons = [
   // },
 ];
 
-export class Database {
+class Database {
   getRandomData = args => actualDb.getRandomData(args);
 }
+
+export { persons };

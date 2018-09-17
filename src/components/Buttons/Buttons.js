@@ -3,7 +3,7 @@ import { View, Button } from "react-native";
 
 import { ButtonsStyle } from "./Buttons.style";
 import { randomNumber } from "../../data/functions.js";
-import { NameButton } from "../NameButton/NameButton,js";
+import { NameButton } from "../NameButton/NameButton";
 
 //export var rightNumber = randomNumber(4);
 
@@ -34,4 +34,4 @@ class Buttons extends Component {
   }
 }
 
-export default { Buttons };
+export { Buttons };

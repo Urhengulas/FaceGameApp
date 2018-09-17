@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { View, Image } from "react-native";
 import { PictureStyle } from "./picture.styles";
 
-export class Picture extends Component {
+class Picture extends Component {
   render() {
     return (
-      <View style={PictureStyle.imageFieldr}>
+      <View style={PictureStyle.imageField}>
         <Image
           source={this.props.path}
           //style={Picturestyle.images}
@@ -14,3 +14,5 @@ export class Picture extends Component {
     );
   }
 }
+
+export { Picture };

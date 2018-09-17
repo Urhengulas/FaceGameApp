@@ -7,3 +7,5 @@ const AppStyle = StyleSheet.create({
     height: "100%"
   }
 });
+
+export { AppStyle };
