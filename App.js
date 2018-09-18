@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { View } from "react-native";
+import * as firebase from "firebase";
 
 import { Buttons } from "./src/components/Buttons/Buttons";
 import { Picture } from "./src/components/Picture/Picture.js";
@@ -7,9 +8,14 @@ import { Picture } from "./src/components/Picture/Picture.js";
 import { AppStyle } from "./App.style.js";
 import { randomNumber, selectedPersons } from "./src/data/functions.js";
 
-//const Button = ({ text }) => <button>{text}</button>;
-
-//<Button text="hello world" />;
+// Initialize Firebase
+const firebaseConfig = {
+  apiKey: "<YOUR-API-KEY>",
+  authDomain: "<YOUR-AUTH-DOMAIN>",
+  databaseURL: "<YOUR-DATABASE-URL>",
+  storageBucket: "<YOUR-STORAGE-BUCKET>"
+};
+firebase.initializeApp(firebaseConfig);
 
 export default class FaceNameGame extends Component {
   constructor(props) {
@@ -46,7 +52,7 @@ export default class FaceNameGame extends Component {
 
     return (
       <View style={AppStyle.wrapper}>
-        <Picture path={names[rightNumber]["image"]} />
+        <Picture name={names[rightNumber]["name"]} />
         <Buttons values={names} onClick={title => this.testfunction(title)} />
       </View>
     );
