@@ -16,6 +16,10 @@ const persons = [
     image: require("../images/dagobert.png")
   }
   // {
+  //   name: "Daisy",
+  //   image: require("../images/daisy.png")
+  // }
+  // {
   //   'name': 'Nemo',
   //   'image': require('./images/nemo.png'),
   // },

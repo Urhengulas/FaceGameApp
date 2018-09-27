@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { View } from "react-native";
+import { View, Text } from "react-native";
 
 import { Buttons } from "./src/components/Buttons/Buttons";
 import { Picture } from "./src/components/Picture/Picture";
+import { Firebase } from "./src/components/Firebase";
 
 import { AppStyle } from "./App.style";
 import { randomNumber, selectedPersons } from "./src/data/functions.js";
@@ -16,6 +17,9 @@ export default class FaceNameGame extends Component {
       names: dataset["names"],
       rightNumber: dataset["rightNumber"]
     };
+  }
+  componentWillMount() {
+    Firebase.init();
   }
 
   getNewDataset = () => ({
