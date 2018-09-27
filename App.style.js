@@ -9,13 +9,15 @@ const AppStyle = StyleSheet.create({
         flexDirection: "column"
     },
 
-    //style of container of status bar
-    statusBarContainer: {
+    //style of container of timer
+    timerContainer: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#ff0000',
-        height: '10%'
+        //backgroundColor: '#ff0000',
+        flexGrow: 1,
+        padding: 0,
+        margin: 0,
     },
 
     //style of container of the picture
@@ -24,9 +26,8 @@ const AppStyle = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         //backgroundColor: '#ffff00',
-        //padding: '1%',
-        height: '50%',
-        //width: '100%'
+        flexGrow: 5.7,
+        width: 'auto',
     },
 
     //style of picture
@@ -38,11 +39,11 @@ const AppStyle = StyleSheet.create({
 
     //style of container of buttons
     buttonContainer: {
-        //paddingTop: '6%',
-        //paddingBottom: '6%',
-        height: '30%',
+        flex: 1,
+        paddingTop: '1.5%',
+        paddingBottom: '1.5%',
+        flexGrow: 3.3,
         //backgroundColor: '#f000f0',
-        marginBottom: '3%'
     },
 });
 
