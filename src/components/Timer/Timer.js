@@ -2,7 +2,7 @@
 
 import React, {Component} from "react";
 import {View, Text, Button, StyleSheet} from "react-native";
-
+import {TimerStyle} from "./Timer.style";
 
 const timer = () => {};
 
@@ -30,21 +30,12 @@ class Timer extends Component {
 
     render() {
         return (
-            <View style={styles.container}>
+            <View style={TimerStyle.container}>
                 <Text>Remaining time :{this.state.remainingTime}</Text>
                 <Button title="Start timer" onPress={() => this.countdownTimer()}/>
             </View>
         );
     }
 }
-
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    }
-});
 
 export {Timer};
