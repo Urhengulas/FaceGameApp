@@ -3,7 +3,7 @@ import { View, Text, StatusBar } from "react-native";
 
 import { Buttons } from "./src/components/Buttons/Buttons";
 import { Picture } from "./src/components/Picture/Picture.js";
-import { Timer } from "./src/components/Timer/Timer.js";
+//import { Timer } from " ./src/components/Timer/Timer";
 
 import { AppStyle } from "./App.style.js";
 import { randomNumber, selectedPersons } from "./src/data/functions.js";
@@ -34,7 +34,7 @@ export default class FaceNameGame extends Component {
 
   testfunction = title => {
     if (title == this.state.names[this.state.rightNumber]["name"]) {
-      alert("right");
+      //alert("right");
 
       const dataset = this.getNewDataset();
       this.setState(dataset);
@@ -61,7 +61,7 @@ export default class FaceNameGame extends Component {
           <Buttons values={names} onClick={title => this.testfunction(title)} />
         </View>
         */
-        <Timer />
+        {/* <Timer /> */}
       </View>
     );
   }
