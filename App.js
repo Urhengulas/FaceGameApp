@@ -1,13 +1,18 @@
 import React, { Component } from "react";
-import { View, Text } from "react-native";
+import { View, Text, StatusBar } from "react-native";
 
 import { Buttons } from "./src/components/Buttons/Buttons";
-import { Picture } from "./src/components/Picture/Picture";
-import { Firebase } from "./src/components/Firebase";
+import { Picture } from "./src/components/Picture/Picture.js";
+import { Timer } from "./src/components/Timer/Timer.js";
 
-import { AppStyle } from "./App.style";
+import { AppStyle } from "./App.style.js";
 import { randomNumber, selectedPersons } from "./src/data/functions.js";
 
+//const Button = ({ text }) => <button>{text}</button>;
+
+//<Button text="hello world" />;
+
+//main Component of the app
 export default class FaceNameGame extends Component {
   constructor(props) {
     super(props);
@@ -17,11 +22,11 @@ export default class FaceNameGame extends Component {
       names: dataset["names"],
       rightNumber: dataset["rightNumber"]
     };
-  }
-  componentWillMount() {
-    Firebase.init();
+
+    //this.getNewDataset = this.getNewDataset.bind(this);
   }
 
+  //generates a new Dataset with
   getNewDataset = () => ({
     rightNumber: randomNumber(4),
     names: selectedPersons()
@@ -39,13 +44,29 @@ export default class FaceNameGame extends Component {
   };
 
   render() {
-    const { names, rightNumber } = this.state;
+    var names = this.state.names;
+    var rightNumber = this.state.rightNumber;
 
     return (
       <View style={AppStyle.wrapper}>
-        <Picture path={names[rightNumber]["image"]} />
-        <Buttons values={names} onClick={title => this.testfunction(title)} />
+        /*
+        <StatusBar hidden={true} />
+        <View style={AppStyle.pictureContainer}>
+          <Picture
+            path={names[rightNumber]["image"]}
+            style={AppStyle.picture}
+          />
+        </View>
+        <View style={AppStyle.buttonContainer}>
+          <Buttons values={names} onClick={title => this.testfunction(title)} />
+        </View>
+        */
+        <Timer />
       </View>
     );
   }
 }
+
+/*<View style={AppStyle.statusBarContainer}>
+                    <Text style={{backgroundColor: '#00ff00'}}>I am a status bar</Text>
+                </View>*/

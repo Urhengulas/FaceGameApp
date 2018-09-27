@@ -1,24 +1,16 @@
-import React, { Component } from "react";
-import { StyleSheet } from "react-native";
+import React, {Component} from "react";
+import {StyleSheet} from "react-native";
 
 const ButtonsStyle = StyleSheet.create({
-  ButtonField: {
-    flex: 1,
-    //backgroundColor: 'green',
-    flexDirection: "row"
-  },
-
-  left: {
-    flex: 1,
-    //  backgroundColor: 'blue',
-    flexDirection: "column"
-  },
-
-  right: {
-    flex: 1,
-    //  backgroundColor: 'yellow',
-    flexDirection: "column"
-  }
+    //style of all the 4 buttons
+    ButtonField: {
+        flex: 1,
+        flexDirection: "column",
+        //backgroundColor: '#ff00ff',
+        //justifyContent: 'center',
+        //alignItems: "center",
+        //width: '90%'
+    }
 });
 
-export { ButtonsStyle };
+export {ButtonsStyle};

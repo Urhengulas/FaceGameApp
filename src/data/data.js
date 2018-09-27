@@ -1,24 +1,20 @@
 const persons = [
   {
-    name: "Donald",
+    name: "Donald Duck",
     image: require("../images/donald.png")
   },
   {
-    name: "Goofy",
+    name: "Goofy Wuff",
     image: require("../images/goofy.png")
   },
   {
-    name: "Mickey",
+    name: "Mickey Mouse",
     image: require("../images/mickey.png")
   },
   {
-    name: "Dagobert",
+    name: "Dagobert Duck",
     image: require("../images/dagobert.png")
   }
-  // {
-  //   name: "Daisy",
-  //   image: require("../images/daisy.png")
-  // }
   // {
   //   'name': 'Nemo',
   //   'image': require('./images/nemo.png'),
