@@ -1,17 +1,19 @@
-import React, {Component} from "react";
-import {StyleSheet} from "react-native";
+import React from "react";
+import { StyleSheet } from "react-native";
 
 const PictureStyle = StyleSheet.create({
-    imageField: {
-        flex: 2,
-        //backgroundColor: 'red',
-        alignItems: "center",
-        justifyContent: "center"
-    },
+  imageField: {
+    flex: 2,
+    //backgroundColor: 'red',
+    alignItems: "center",
+    justifyContent: "center"
+  },
 
-    images: {
-        width: 200
-    }
+  images: {
+    width: 400,
+    height: 400,
+    resizeMode: "contain"
+  }
 });
 
-export {PictureStyle};
+export { PictureStyle };

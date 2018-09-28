@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { StyleSheet } from "react-native";
 
 const FaceNameGameStyle = StyleSheet.create({
@@ -25,7 +25,7 @@ const FaceNameGameStyle = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     //backgroundColor: '#ffff00',
-    flexGrow: 5.7,
+    flexGrow: 5.5,
     width: "auto"
   },
 
@@ -41,8 +41,8 @@ const FaceNameGameStyle = StyleSheet.create({
     flex: 1,
     paddingTop: "1.5%",
     paddingBottom: "1.5%",
-    flexGrow: 3.3
-    //backgroundColor: '#f000f0',
+    flexGrow: 3.5
+    //backgroundColor: '#d8ddd9',
   }
 });
 
