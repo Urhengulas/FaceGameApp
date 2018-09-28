@@ -1,16 +1,32 @@
-import React, {Component} from "react";
-import {View, Button, TouchableHighlight, StyleSheet, Text} from "react-native";
+import React, { Component } from "react";
+import { Text, TouchableHighlight, View } from "react-native";
 
-import {NameButtonStyle} from "./NameButton.style.js";
+import { NameButtonStyle } from "./NameButton.style.js";
 
-const NameButton = ({onClick, name}) => (
-    <View style={NameButtonStyle.container}>
+class NameButton extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      pressed: this.props.pressed
+    };
+  }
+
+  render() {
+    return (
+      <View style={NameButtonStyle.container}>
         <TouchableHighlight
-            style={NameButtonStyle.button}
-            onPress={onClick}>
-            <Text style={NameButtonStyle.text}>{name}</Text>
+          style={!this.state.pressed ? NameButtonStyle.button : NameButtonStyle.buttonPressed}
+          onPress={this.props.onClick}>
+          <Text style={NameButtonStyle.text}>{this.props.name}</Text>
         </TouchableHighlight>
-    </View>
-);
+      </View>
+    );
+  }
+}
 
-export {NameButton};
+NameButton.defaultProps = {
+  pressed: true
+};
+
+export { NameButton };

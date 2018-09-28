@@ -1,7 +1,7 @@
 //basic component is from https://stackoverflow.com/questions/31963803/create-timer-with-react-native-using-es6#36164620
 
 import React, { Component } from "react";
-import { View, Text, Button, StyleSheet } from "react-native";
+import { Button, Text, View } from "react-native";
 import { TimerStyle } from "./Timer.style";
 
 const timer = () => {};

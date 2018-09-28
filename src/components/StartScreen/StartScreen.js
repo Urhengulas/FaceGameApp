@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, StatusBar } from "react-native";
-
+import { StatusBar, Text, View } from "react-native";
 //Components
 import { NameButton } from "../NameButton/NameButton";
 import { StartStyle } from "./StartScreen.style.js";
@@ -10,11 +9,21 @@ class StartScreen extends Component {
   render() {
     return (
       <View style={StartStyle.wrapper}>
-        <Text>Home Screen</Text>
-        <NameButton
-          name="Start Game"
-          onClick={() => this.props.navigation.navigate('FaceNameGame')}
-        />
+        <StatusBar hidden={true}/>
+        <View style={StartStyle.textContainer}>
+          <Text style={{ fontSize: 100 }}>{"C<>DE"}</Text>
+          <Text style={{ fontSize: 50 }}>NAME</Text>
+        </View>
+        <View style={StartStyle.buttonContainer}>
+          <NameButton
+            name="Start Game"
+            onClick={() => this.props.navigation.navigate("FaceNameGame")}
+          />
+          <NameButton
+            name="ScoreBoard"
+            onClick={() => this.props.navigation.navigate("ScoreBoard")}
+          />
+        </View>
       </View>
     );
   }

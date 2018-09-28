@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { StyleSheet } from "react-native";
 
 const ScoreStyle = StyleSheet.create({
@@ -7,16 +7,16 @@ const ScoreStyle = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "center"
   },
 
   //style of container of timer
-  statusContainer: {
+  textContainer: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "stretch",
     //backgroundColor: '#ff0000',
-    flexGrow: 1,
+    flexGrow: 1
   },
 
   //style of container of buttons
@@ -24,7 +24,7 @@ const ScoreStyle = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    flexGrow: 4
+    flexGrow: 3
     //backgroundColor: '#f000f0',
   }
 });

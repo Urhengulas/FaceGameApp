@@ -14,15 +14,15 @@ const persons = [
   {
     name: "Dagobert Duck",
     image: require("../images/dagobert.png")
+  },
+  {
+    name: "Nemo Blub",
+    image: require("../images/nemo.png")
+  },
+  {
+    name: "Dory Without Memory",
+    image: require("../images/dory.png")
   }
-  // {
-  //   'name': 'Nemo',
-  //   'image': require('./images/nemo.png'),
-  // },
-  // {
-  //   'name': 'Dory',
-  //   'image': require('./images/dory.png'),
-  // },
 ];
 
 class Database {
