@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, StatusBar } from "react-native";
-
+import { Text, View } from "react-native";
 //Components
 import { NameButton } from "../NameButton/NameButton";
 import { EndStyle } from "./EndScreen.style.js";
@@ -10,16 +9,19 @@ class EndScreen extends Component {
   render() {
     return (
       <View style={EndStyle.wrapper}>
-        <Text>End Screen</Text>
-        <NameButton
-          name="Restart Game"
-          onClick={() => this.props.navigation.navigate('FaceNameGame')}
-        />
-        <NameButton
-          name="Go to main menue"
-          onClick={() => this.props.navigation.navigate('StartScreen')}
-        />
-
+        <View style={EndStyle.textContainer}>
+          <Text style={{ fontSize: 80, fontWeight: "bold" }}>Game over</Text>
+        </View>
+        <View style={EndStyle.buttonContainer}>
+          <NameButton
+            name="Restart Game"
+            onClick={() => this.props.navigation.push("FaceNameGame")}
+          />
+          <NameButton
+            name="Go to main menue"
+            onClick={() => this.props.navigation.navigate("StartScreen")}
+          />
+        </View>
       </View>
     );
   }

@@ -1,15 +1,12 @@
 import React, { Component } from "react";
-import { View, Image } from "react-native";
+import { Image, View } from "react-native";
 import { PictureStyle } from "./Picture.styles";
 
 class Picture extends Component {
   render() {
     return (
       <View style={PictureStyle.imageField}>
-        <Image
-          source={this.props.path}
-          //style={Picturestyle.images}
-        />
+        <Image source={this.props.path} style={PictureStyle.images} />
       </View>
     );
   }

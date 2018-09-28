@@ -1,14 +1,9 @@
 import React, { Component } from "react";
-import { View, Text, StatusBar } from "react-native";
-import { createStackNavigator } from "react-navigation";
-
+import { StatusBar, Text, View } from "react-native";
 //Components
 import { Buttons } from "../Buttons/Buttons";
 import { Picture } from "../Picture/Picture.js";
-import { Timer } from "../Timer/Timer.js";
 import { randomNumber, selectedPersons } from "../../data/functions.js";
-import { StartScreen } from "../StartScreen/StartScreen";
-
 //Style
 import { FaceNameGameStyle } from "./FaceNameGame.style.js";
 
@@ -43,7 +38,7 @@ class FaceNameGame extends Component {
       this.setState({ pressed: true });
     } else {
       //alert("wrong");
-      this.props.navigation.navigate('EndScreen')
+      this.props.navigation.navigate("EndScreen");
     }
   };
 

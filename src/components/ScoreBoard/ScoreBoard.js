@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import { View, Text, StatusBar } from "react-native";
-
+import { StatusBar, Text, View } from "react-native";
 //Components
 import { NameButton } from "../NameButton/NameButton";
 import { ScoreStyle } from "./ScoreBoard.style.js";
 
 //main Component of the app
-class StartScreen extends Component {
+class ScoreBoard extends Component {
   render() {
     return (
       <View style={ScoreStyle.wrapper}>
@@ -21,9 +20,8 @@ class StartScreen extends Component {
           />
         </View>
       </View>
-      < /View>
     );
   }
 }
 
-export { StartScreen };
+export { ScoreBoard };
