@@ -1,18 +1,23 @@
 import React, { Component } from "react";
-import { StatusBar, Text, View } from "react-native";
+import { StatusBar, Text, View, Image } from "react-native";
 //Components
 import { NameButton } from "../NameButton/NameButton";
 import { StartStyle } from "./StartScreen.style.js";
 
 //main Component of the app
 class StartScreen extends Component {
+  static navigationOptions = {
+    header: null
+  };
   render() {
     return (
       <View style={StartStyle.wrapper}>
-        <StatusBar hidden={true}/>
+        <StatusBar hidden={true} />
         <View style={StartStyle.textContainer}>
-          <Text style={{ fontSize: 100 }}>{"C<>DE"}</Text>
-          <Text style={{ fontSize: 50 }}>NAME</Text>
+          <Image
+            source={require("./Logo.png")}
+            style={{ width: 310, resizeMode: "contain" }}
+          />
         </View>
         <View style={StartStyle.buttonContainer}>
           <NameButton

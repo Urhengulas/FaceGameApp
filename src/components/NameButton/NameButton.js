@@ -16,8 +16,9 @@ class NameButton extends Component {
     return (
       <View style={NameButtonStyle.container}>
         <TouchableHighlight
-          style={!this.state.pressed ? NameButtonStyle.button : NameButtonStyle.buttonPressed}
-          onPress={this.props.onClick}>
+          style={NameButtonStyle.button}
+          onPress={this.props.onClick}
+        >
           <Text style={NameButtonStyle.text}>{this.props.name}</Text>
         </TouchableHighlight>
       </View>
