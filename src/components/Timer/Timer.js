@@ -4,8 +4,7 @@ import React, { Component } from "react";
 import { Button, Text, View } from "react-native";
 import { TimerStyle } from "./Timer.style";
 
-const timer = () => {
-};
+const timer = () => {};
 
 class Timer extends Component {
   constructor(props) {
@@ -33,7 +32,7 @@ class Timer extends Component {
     return (
       <View style={TimerStyle.container}>
         <Text>Remaining time :{this.state.remainingTime}</Text>
-        <Button title="Start timer" onPress={() => this.countdownTimer()}/>
+        <Button title="Start timer" onPress={() => this.countdownTimer()} />
       </View>
     );
   }

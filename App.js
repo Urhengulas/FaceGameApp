@@ -6,7 +6,6 @@ import { FaceNameGame } from "./src/components/FaceNameGame/FaceNameGame";
 import { EndScreen } from "./src/components/EndScreen/EndScreen";
 import { ScoreBoard } from "./src/components/ScoreBoard/ScoreBoard";
 
-
 //Navigation
 const RootStack = createStackNavigator(
   {
@@ -22,6 +21,6 @@ const RootStack = createStackNavigator(
 
 export default class App extends Component {
   render() {
-    return <RootStack/>;
+    return <RootStack />;
   }
 }

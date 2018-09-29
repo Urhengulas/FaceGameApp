@@ -6,10 +6,7 @@ class Picture extends Component {
   render() {
     return (
       <View style={PictureStyle.imageField}>
-        <Image
-          source={this.props.path}
-          style={PictureStyle.images}
-        />
+        <Image source={this.props.path} style={PictureStyle.images} />
       </View>
     );
   }

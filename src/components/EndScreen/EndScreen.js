@@ -6,6 +6,9 @@ import { EndStyle } from "./EndScreen.style.js";
 
 //main Component of the app
 class EndScreen extends Component {
+  static navigationOptions = {
+    header: null
+  };
   render() {
     return (
       <View style={EndStyle.wrapper}>
