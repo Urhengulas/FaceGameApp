@@ -1,3 +1,3 @@
-# Face Game App
+# Face Game FaceNameGame
 
 Project of group 21
