@@ -9,7 +9,7 @@ class Buttons extends Component {
     super(props);
 
     this.state = {
-      backgroundColor: "#ffffff"
+      //backgroundColor: "#ffffff"
     };
   }
 
@@ -26,13 +26,18 @@ class Buttons extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1, flexDirection: "column", backgroundColor: this.state.backgroundColor }}>
+      <View
+        style={{
+          flex: 1,
+          flexDirection: "column",
+          backgroundColor: this.state.backgroundColor
+        }}
+      >
         {this.renderNameButton(0)}
         {this.renderNameButton(1)}
         {this.renderNameButton(2)}
         {this.renderNameButton(3)}
       </View>
-
     );
   }
 }
