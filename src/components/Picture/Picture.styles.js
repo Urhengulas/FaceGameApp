@@ -12,7 +12,8 @@ const PictureStyle = StyleSheet.create({
   images: {
     width: 350,
     height: 350,
-    resizeMode: "contain"
+    resizeMode: "contain",
+    borderRadius: 6,
   }
 });
 
