@@ -14,6 +14,7 @@ class EndScreen extends Component {
       <View style={EndStyle.wrapper}>
         <View style={EndStyle.textContainer}>
           <Text style={{ fontSize: 80, fontWeight: "bold" }}>Game over</Text>
+          <Text>{this.props.navigation.getParam("score", "no score")}</Text>
         </View>
         <View style={EndStyle.buttonContainer}>
           <NameButton

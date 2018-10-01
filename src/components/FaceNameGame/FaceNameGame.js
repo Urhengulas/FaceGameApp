@@ -12,12 +12,17 @@ import { FaceNameGameStyle } from "./FaceNameGame.style.js";
 class FaceNameGame extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      score: 0
+    };
+
     const dataset = this.getNewDataset();
 
     this.state = {
       names: dataset["names"],
       rightNumber: dataset["rightNumber"],
-      pressed: false
+      score: dataset["score"],
+      pressed: dataset["pressed"]
     };
 
     this.getNewDataset = this.getNewDataset.bind(this);
@@ -26,11 +31,12 @@ class FaceNameGame extends Component {
   static navigationOptions = {
     header: null
   };
-
+  punkte = 0;
   //generates a new Dataset with
   getNewDataset = () => ({
     rightNumber: randomNumber(4),
     names: selectedPersons(),
+    score: this.state.score + 1,
     pressed: false
   });
 
@@ -40,7 +46,7 @@ class FaceNameGame extends Component {
       this.setState(dataset);
       this.setState({ pressed: true });
     } else {
-      this.props.navigation.navigate("EndScreen");
+      this.props.navigation.navigate("EndScreen", { score: this.state.score });
     }
   };
 
@@ -59,11 +65,7 @@ class FaceNameGame extends Component {
     return (
       <View style={FaceNameGameStyle.wrapper}>
         <StatusBar hidden={true} />
-        <View style={FaceNameGameStyle.timerContainer}>
-          {/*  <Text style={{ fontSize: 30, fontWeight: "bold" }}>
-            Ultimate Name Game 3000
-          </Text> */}
-        </View>
+
         <View style={FaceNameGameStyle.pictureContainer}>
           <Picture
             path={names[rightNumber]["image"]}
