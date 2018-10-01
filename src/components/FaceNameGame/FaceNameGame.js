@@ -12,23 +12,19 @@ import { FaceNameGameStyle } from "./FaceNameGame.style.js";
 class FaceNameGame extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      score: -1
-    };
 
-    this.state = this.getNewDataset();
+    this.state = this.getNewDataset(0); // initialize score with 0
   }
 
   static navigationOptions = {
     header: null
   };
 
-  punkte = 0;
   //generates a new Dataset with
-  getNewDataset = () => ({
+  getNewDataset = points => ({
     rightNumber: randomNumber(4),
     names: selectedPersons(),
-    score: this.state.score + 1,
+    score: points,
     bgColor: "#ffffff"
   });
 
@@ -36,7 +32,7 @@ class FaceNameGame extends Component {
     if (title == this.state.names[this.state.rightNumber]["name"]) {
       this.setState({ bgColor: "#00ff00" });
       setTimeout(() => {
-        this.setState(this.getNewDataset());
+        this.setState(this.getNewDataset(this.state.score + 1));
       }, 500);
     } else {
       this.setState({ bgColor: "#AC3B3B" });
