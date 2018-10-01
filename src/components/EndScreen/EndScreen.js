@@ -13,8 +13,11 @@ class EndScreen extends Component {
     return (
       <View style={EndStyle.wrapper}>
         <View style={EndStyle.textContainer}>
-          <Text style={{ fontSize: 80, fontWeight: "bold" }}>Game over</Text>
-          <Text>{this.props.navigation.getParam("score", "no score")}</Text>
+          <Text style={EndStyle.gameOverText}>Game over</Text>
+          <Text style={EndStyle.scoreText}>
+            {"Your score is:\n" +
+              this.props.navigation.getParam("score", "no score")}
+          </Text>
         </View>
         <View style={EndStyle.buttonContainer}>
           <NameButton

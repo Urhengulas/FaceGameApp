@@ -5,7 +5,8 @@ const FaceNameGameStyle = StyleSheet.create({
   //style of whole screen
   wrapper: {
     flex: 1,
-    flexDirection: "column"
+    flexDirection: "column",
+    backgroundColor: "#ff00ff"
   },
 
   //style of container of timer

@@ -24,10 +24,10 @@ class StartScreen extends Component {
             name="Start Game"
             onClick={() => this.props.navigation.navigate("FaceNameGame")}
           />
-          <NameButton
+          {/* <NameButton
             name="ScoreBoard"
             onClick={() => this.props.navigation.navigate("ScoreBoard")}
-          />
+          /> */}
         </View>
       </View>
     );

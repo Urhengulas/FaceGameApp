@@ -7,21 +7,11 @@ import { NameButton } from "../NameButton/NameButton";
 class Buttons extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      //backgroundColor: "#ffffff"
-    };
   }
 
   renderNameButton(i) {
     let name = this.props.values[i]["name"];
-    return (
-      <NameButton
-        name={name}
-        onClick={() => this.props.onClick(name)}
-        pressed={this.props.pressArray[i]}
-      />
-    );
+    return <NameButton name={name} onClick={() => this.props.onClick(name)} />;
   }
 
   render() {
@@ -29,8 +19,7 @@ class Buttons extends Component {
       <View
         style={{
           flex: 1,
-          flexDirection: "column",
-          backgroundColor: this.state.backgroundColor
+          flexDirection: "column"
         }}
       >
         {this.renderNameButton(0)}

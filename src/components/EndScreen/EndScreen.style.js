@@ -7,8 +7,8 @@ const EndStyle = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
     justifyContent: "center",
-    alignItems: "center"
-    //backgroundColor: '#0000ff'
+    alignItems: "center",
+    backgroundColor: "#AC3B3B"
   },
   textContainer: {
     flex: 1,
@@ -26,6 +26,18 @@ const EndStyle = StyleSheet.create({
     marginBottom: "5%",
     //backgroundColor: '#00ff00',
     width: "100%"
+  },
+
+  gameOverText: {
+    fontSize: 120,
+    fontWeight: "bold",
+    textAlign: "center"
+  },
+
+  scoreText: {
+    fontSize: 60,
+    fontWeight: "bold",
+    textAlign: "center"
   }
 });
 
