@@ -12,58 +12,55 @@ import { FaceNameGameStyle } from "./FaceNameGame.style.js";
 class FaceNameGame extends Component {
   constructor(props) {
     super(props);
-    const dataset = this.getNewDataset();
-
     this.state = {
-      names: dataset["names"],
-      rightNumber: dataset["rightNumber"],
-      pressed: false
+      score: -1
     };
 
-    this.getNewDataset = this.getNewDataset.bind(this);
+    this.state = this.getNewDataset();
   }
 
   static navigationOptions = {
     header: null
   };
 
+  punkte = 0;
   //generates a new Dataset with
   getNewDataset = () => ({
     rightNumber: randomNumber(4),
     names: selectedPersons(),
-    pressed: false
+    score: this.state.score + 1,
+    bgColor: "#ffffff"
   });
 
   testfunction = title => {
     if (title == this.state.names[this.state.rightNumber]["name"]) {
-      const dataset = this.getNewDataset();
-      this.setState(dataset);
-      this.setState({ pressed: true });
+      this.setState({ bgColor: "#00ff00" });
+      setTimeout(() => {
+        this.setState(this.getNewDataset());
+      }, 500);
     } else {
-      this.props.navigation.navigate("EndScreen");
+      this.setState({ bgColor: "#AC3B3B" });
+      setTimeout(() => {
+        this.props.navigation.navigate("EndScreen", {
+          score: this.state.score
+        });
+      }, 500);
     }
   };
 
   render() {
-    var names = this.state.names;
-    var rightNumber = this.state.rightNumber;
-
-    let pressArray = [false, false, false, false];
-    for (let i = 0; i < 4; i++) {
-      if (i != rightNumber) {
-        pressArray[i] = this.state.pressed;
-      }
-    }
-    //alert(pressArray);
+    const names = this.state.names;
+    const rightNumber = this.state.rightNumber;
 
     return (
-      <View style={FaceNameGameStyle.wrapper}>
+      <View
+        style={{
+          flex: 1,
+          flexDirection: "column",
+          backgroundColor: this.state.bgColor
+        }}
+      >
         <StatusBar hidden={true} />
-        <View style={FaceNameGameStyle.timerContainer}>
-          {/*  <Text style={{ fontSize: 30, fontWeight: "bold" }}>
-            Ultimate Name Game 3000
-          </Text> */}
-        </View>
         <View style={FaceNameGameStyle.pictureContainer}>
           <Picture
             path={names[rightNumber]["image"]}
@@ -71,11 +68,7 @@ class FaceNameGame extends Component {
           />
         </View>
         <View style={FaceNameGameStyle.buttonContainer}>
-          <Buttons
-            values={names}
-            onClick={title => this.testfunction(title)}
-            pressArray={pressArray}
-          />
+          <Buttons values={names} onClick={title => this.testfunction(title)} />
         </View>
       </View>
     );

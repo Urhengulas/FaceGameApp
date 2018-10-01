@@ -1,27 +1,23 @@
 const persons = [
   {
-    name: "Donald Duck",
-    image: require("../images/donald.png")
+    name: "Johann Hemmann",
+    image: require("../images/johann.png")
   },
   {
-    name: "Goofy Wuff",
-    image: require("../images/goofy.png")
+    name: "Jannis Jorre",
+    image: require("../images/jannis.jpg")
   },
   {
-    name: "Mickey Mouse",
-    image: require("../images/mickey.png")
+    name: "Hannes Oswald",
+    image: require("../images/hannes.png")
   },
   {
-    name: "Dagobert Duck",
-    image: require("../images/dagobert.png")
+    name: "Malik Piara",
+    image: require("../images/malik.jpeg")
   },
   {
-    name: "Nemo Blub",
-    image: require("../images/nemo.png")
-  },
-  {
-    name: "Dory Without Memory",
-    image: require("../images/dory.png")
+    name: "Jonathan Freiberger",
+    image: require("../images/jonathan.jpeg")
   }
 ];
 

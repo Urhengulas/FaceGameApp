@@ -4,14 +4,14 @@ import { StyleSheet } from "react-native";
 const PictureStyle = StyleSheet.create({
   imageField: {
     flex: 2,
-    //backgroundColor: 'red',
+    //backgroundColor: "white",
     alignItems: "center",
     justifyContent: "center"
   },
 
   images: {
-    width: 400,
-    height: 400,
+    width: 350,
+    height: 350,
     resizeMode: "contain"
   }
 });

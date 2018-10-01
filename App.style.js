@@ -5,7 +5,8 @@ const AppStyle = StyleSheet.create({
   //style of whole screen
   wrapper: {
     flex: 1,
-    flexDirection: "column"
+    flexDirection: "column",
+    backgroundColor: "white"
   },
 
   //style of container of timer
