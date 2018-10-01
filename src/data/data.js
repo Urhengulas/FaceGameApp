@@ -1,24 +1,28 @@
 const persons = [
   {
-    name: "Johann Hemmann",
-    image: require("../images/johann.png")
+    name: "Donald",
+    image: require("../images/donald.png")
   },
   {
-    name: "Jannis Jorre",
-    image: require("../images/jannis.jpg")
+    name: "Goofy",
+    image: require("../images/goofy.png")
   },
   {
-    name: "Hannes Oswald",
-    image: require("../images/hannes.png")
+    name: "Mickey",
+    image: require("../images/mickey.png")
   },
   {
-    name: "Malik Piara",
-    image: require("../images/malik.jpeg")
-  },
-  {
-    name: "Jonathan Freiberger",
-    image: require("../images/jonathan.jpeg")
+    name: "Dagobert",
+    image: require("../images/dagobert.png")
   }
+  // {
+  //   'name': 'Nemo',
+  //   'image': require('./images/nemo.png'),
+  // },
+  // {
+  //   'name': 'Dory',
+  //   'image': require('./images/dory.png'),
+  // },
 ];
 
 class Database {

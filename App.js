@@ -1,26 +1,47 @@
 import React, { Component } from "react";
-import { createStackNavigator } from "react-navigation";
-//Components
-import { StartScreen } from "./src/components/StartScreen/StartScreen";
-import { FaceNameGame } from "./src/components/FaceNameGame/FaceNameGame";
-import { EndScreen } from "./src/components/EndScreen/EndScreen";
-import { ScoreBoard } from "./src/components/ScoreBoard/ScoreBoard";
+import { View } from "react-native";
 
-//Navigation
-const RootStack = createStackNavigator(
-  {
-    StartScreen: StartScreen,
-    FaceNameGame: FaceNameGame,
-    EndScreen: EndScreen,
-    ScoreBoard: ScoreBoard
-  },
-  {
-    initialRouteName: "StartScreen"
+import { Buttons } from "./src/components/Buttons/Buttons";
+import { Picture } from "./src/components/Picture/Picture";
+
+import { AppStyle } from "./App.style";
+import { randomNumber, selectedPersons } from "./src/data/functions.js";
+
+export default class FaceNameGame extends Component {
+  constructor(props) {
+    super(props);
+    const dataset = this.getNewDataset();
+
+    this.state = {
+      names: dataset["names"],
+      rightNumber: dataset["rightNumber"]
+    };
   }
-);
 
-export default class App extends Component {
+  getNewDataset = () => ({
+    rightNumber: randomNumber(4),
+    names: selectedPersons()
+  });
+
+  testfunction = title => {
+    if (title == this.state.names[this.state.rightNumber]["name"]) {
+      alert("right");
+
+      const dataset = this.getNewDataset();
+      this.setState(dataset);
+    } else {
+      alert("wrong");
+    }
+  };
+
   render() {
-    return <RootStack />;
+    const { names, rightNumber } = this.state;
+
+    return (
+      <View style={AppStyle.wrapper}>
+        <Picture path={names[rightNumber]["image"]} />
+        <Buttons values={names} onClick={title => this.testfunction(title)} />
+      </View>
+    );
   }
 }
